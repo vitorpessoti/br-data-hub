@@ -1,0 +1,42 @@
+name: br-data-hub-br-data-hub-backend-db
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: br-data-hub-br-data-hub-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: br_data_hub_br_data_hub
+      POSTGRES_PASSWORD: docker
+      POSTGRES_DB: br_data_hub_br_data_hub_db
+    ports:
+      - '5689:5432'
+    volumes:
+      - br-data-hub-br-data-hub-postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U br_data_hub_br_data_hub']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis das filas BullMQ (rate-limit das APIs externas ViaCEP e BrasilAPI).
+  redis:
+    image: redis:7-alpine
+    container_name: br-data-hub-br-data-hub-redis
+    restart: unless-stopped
+    command: ['redis-server', '--appendonly', 'yes']
+    ports:
+      - '6389:6379'
+    volumes:
+      - br-data-hub-br-data-hub-redis-data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  br-data-hub-br-data-hub-postgres-data:
+    driver: local
+  br-data-hub-br-data-hub-redis-data:
+    driver: local

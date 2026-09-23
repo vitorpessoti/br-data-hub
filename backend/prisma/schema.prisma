@@ -1,0 +1,116 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "linux-musl-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Adicione seus models abaixo e rode: npm run prisma:migrate -- --name <nome>
+
+// Status of the enrichment of a CEP/CNPJ with the external API (direct call or BullMQ job).
+enum EnrichmentStatus {
+  pending
+  processing
+  completed
+  failed
+
+  @@map("enrichment_status")
+}
+
+model User {
+  id                     String    @id @default(uuid()) @db.Uuid
+  name                   String
+  email                  String    @unique
+  password               String
+  active                 Boolean   @default(true)
+  resetPasswordTokenHash String?   @unique
+  resetPasswordExpiresAt DateTime?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  @@map("user")
+}
+
+model Cep {
+  id           String           @id @default(uuid()) @db.Uuid
+  cep          String           @unique @db.VarChar(8)
+  street       String?
+  complement   String?
+  unit         String?
+  neighborhood String?
+  city         String?
+  uf           String?          @db.VarChar(2)
+  state        String?
+  region       String?
+  ibgeCode     String?          @db.VarChar(7)
+  giaCode      String?
+  ddd          String?          @db.VarChar(2)
+  siafiCode    String?
+  jobId        String?          @unique
+  status       EnrichmentStatus @default(completed)
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+
+  @@map("cep")
+}
+
+model Cnpj {
+  id                           String           @id @default(uuid()) @db.Uuid
+  cnpj                         String           @unique @db.VarChar(14)
+  corporateName                String?
+  tradeName                    String?
+  establishmentTypeCode        Int?
+  establishmentType            String?
+  registrationStatusCode       Int?
+  registrationStatus           String?
+  registrationStatusDate       DateTime?        @db.Date
+  registrationStatusReasonCode Int?
+  registrationStatusReason     String?
+  specialStatus                String?
+  specialStatusDate            DateTime?        @db.Date
+  legalNatureCode              Int?
+  legalNature                  String?
+  activityStartDate            DateTime?        @db.Date
+  mainCnaeCode                 Int?
+  mainCnaeDescription          String?
+  secondaryCnaes               Json             @default("[]")
+  streetType                   String?
+  street                       String?
+  number                       String?
+  complement                   String?
+  neighborhood                 String?
+  cep                          String?          @db.VarChar(8)
+  uf                           String?          @db.VarChar(2)
+  cityCode                     Int?
+  cityIbgeCode                 Int?
+  city                         String?
+  foreignCityName              String?
+  countryCode                  Int?
+  country                      String?
+  primaryPhone                 String?
+  secondaryPhone               String?
+  fax                          String?
+  email                        String?
+  responsibleQualificationCode Int?
+  shareCapital                 Decimal?         @db.Decimal(18, 2)
+  companySizeCode              Int?
+  companySize                  String?
+  responsibleFederativeEntity  String?
+  optedForSimples              Boolean?
+  simplesOptionDate            DateTime?        @db.Date
+  simplesExclusionDate         DateTime?        @db.Date
+  optedForMei                  Boolean?
+  meiOptionDate                DateTime?        @db.Date
+  meiExclusionDate             DateTime?        @db.Date
+  taxRegimes                   Json             @default("[]")
+  qsa                          Json             @default("[]")
+  jobId                        String?          @unique
+  status                       EnrichmentStatus @default(completed)
+  createdAt                    DateTime         @default(now())
+  updatedAt                    DateTime         @updatedAt
+
+  @@map("cnpj")
+}

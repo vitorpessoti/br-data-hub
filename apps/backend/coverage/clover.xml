@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1789414757578" clover="3.2.0">
+  <project timestamp="1789414757579" name="All files">
+    <metrics statements="130" coveredstatements="129" conditionals="74" coveredconditionals="68" methods="34" coveredmethods="34" elements="238" coveredelements="231" complexity="0" loc="130" ncloc="130" packages="1" files="3" classes="3"/>
+    <file name="br-data-enrichment.worker.ts" path="C:\projects\br-data-hub\apps\backend\src\modules\br-data\br-data-enrichment.worker.ts">
+      <metrics statements="28" coveredstatements="28" conditionals="6" coveredconditionals="5" methods="8" coveredmethods="8"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="13" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="35" count="1" type="stmt"/>
+      <line num="36" count="9" type="stmt"/>
+      <line num="37" count="9" type="stmt"/>
+      <line num="39" count="9" type="cond" truecount="3" falsecount="1"/>
+      <line num="42" count="9" type="stmt"/>
+      <line num="43" count="18" type="stmt"/>
+      <line num="48" count="2" type="stmt"/>
+      <line num="52" count="18" type="stmt"/>
+      <line num="53" count="18" type="stmt"/>
+      <line num="55" count="18" type="stmt"/>
+      <line num="58" count="9" type="stmt"/>
+      <line num="59" count="9" type="stmt"/>
+      <line num="61" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="62" count="1" type="stmt"/>
+      <line num="66" count="4" type="stmt"/>
+      <line num="69" count="4" type="stmt"/>
+      <line num="70" count="4" type="stmt"/>
+      <line num="81" count="18" type="stmt"/>
+      <line num="82" count="2" type="stmt"/>
+      <line num="84" count="18" type="stmt"/>
+      <line num="85" count="1" type="stmt"/>
+      <line num="88" count="18" type="stmt"/>
+      <line num="92" count="18" type="stmt"/>
+    </file>
+    <file name="br-data.controller.ts" path="C:\projects\br-data-hub\apps\backend\src\modules\br-data\br-data.controller.ts">
+      <metrics statements="58" coveredstatements="57" conditionals="42" coveredconditionals="37" methods="10" coveredmethods="10"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="14" count="1" type="stmt"/>
+      <line num="16" count="1" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="18" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="20" count="1" type="stmt"/>
+      <line num="21" count="1" type="stmt"/>
+      <line num="22" count="1" type="stmt"/>
+      <line num="23" count="1" type="stmt"/>
+      <line num="24" count="1" type="stmt"/>
+      <line num="31" count="1" type="stmt"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="36" count="1" type="stmt"/>
+      <line num="38" count="10" type="cond" truecount="6" falsecount="2"/>
+      <line num="39" count="10" type="cond" truecount="3" falsecount="1"/>
+      <line num="40" count="10" type="cond" truecount="3" falsecount="1"/>
+      <line num="41" count="10" type="stmt"/>
+      <line num="48" count="1" type="stmt"/>
+      <line num="53" count="12" type="stmt"/>
+      <line num="54" count="12" type="stmt"/>
+      <line num="59" count="12" type="stmt"/>
+      <line num="61" count="11" type="stmt"/>
+      <line num="63" count="11" type="stmt"/>
+      <line num="68" count="11" type="stmt"/>
+      <line num="69" count="11" type="stmt"/>
+      <line num="70" count="11" type="stmt"/>
+      <line num="72" count="11" type="cond" truecount="2" falsecount="0"/>
+      <line num="73" count="6" type="stmt"/>
+      <line num="75" count="6" type="stmt"/>
+      <line num="78" count="5" type="stmt"/>
+      <line num="82" count="1" type="stmt"/>
+      <line num="87" count="1" type="stmt"/>
+      <line num="96" count="1" type="stmt"/>
+      <line num="97" count="1" type="stmt"/>
+      <line num="105" count="1" type="stmt"/>
+      <line num="109" count="3" type="stmt"/>
+      <line num="112" count="3" type="cond" truecount="4" falsecount="0"/>
+      <line num="113" count="2" type="stmt"/>
+      <line num="116" count="1" type="stmt"/>
+      <line num="120" count="1" type="stmt"/>
+      <line num="124" count="1" type="stmt"/>
+      <line num="126" count="0" type="stmt"/>
+      <line num="131" count="23" type="stmt"/>
+      <line num="133" count="23" type="cond" truecount="4" falsecount="0"/>
+      <line num="134" count="1" type="stmt"/>
+      <line num="137" count="22" type="stmt"/>
+      <line num="143" count="11" type="stmt"/>
+      <line num="148" count="11" type="stmt"/>
+      <line num="152" count="22" type="stmt"/>
+      <line num="154" count="22" type="cond" truecount="4" falsecount="0"/>
+      <line num="155" count="16" type="stmt"/>
+      <line num="158" count="22" type="cond" truecount="4" falsecount="0"/>
+      <line num="159" count="3" type="stmt"/>
+      <line num="162" count="22" type="stmt"/>
+      <line num="169" count="2" type="stmt"/>
+      <line num="171" count="2" type="cond" truecount="4" falsecount="0"/>
+    </file>
+    <file name="bullmq.br-data-enrichment.ts" path="C:\projects\br-data-hub\apps\backend\src\modules\br-data\bullmq.br-data-enrichment.ts">
+      <metrics statements="44" coveredstatements="44" conditionals="26" coveredconditionals="26" methods="16" coveredmethods="16"/>
+      <line num="1" count="2" type="stmt"/>
+      <line num="2" count="2" type="stmt"/>
+      <line num="8" count="2" type="stmt"/>
+      <line num="9" count="2" type="stmt"/>
+      <line num="11" count="2" type="stmt"/>
+      <line num="49" count="2" type="stmt"/>
+      <line num="52" count="22" type="stmt"/>
+      <line num="53" count="22" type="stmt"/>
+      <line num="54" count="22" type="stmt"/>
+      <line num="56" count="44" type="stmt"/>
+      <line num="62" count="22" type="stmt"/>
+      <line num="64" count="44" type="stmt"/>
+      <line num="71" count="7" type="stmt"/>
+      <line num="73" count="7" type="stmt"/>
+      <line num="75" count="7" type="stmt"/>
+      <line num="80" count="26" type="stmt"/>
+      <line num="84" count="26" type="stmt"/>
+      <line num="93" count="20" type="stmt"/>
+      <line num="95" count="22" type="stmt"/>
+      <line num="97" count="22" type="cond" truecount="4" falsecount="0"/>
+      <line num="98" count="2" type="stmt"/>
+      <line num="101" count="20" type="cond" truecount="2" falsecount="0"/>
+      <line num="102" count="10" type="stmt"/>
+      <line num="107" count="10" type="stmt"/>
+      <line num="109" count="1" type="stmt"/>
+      <line num="115" count="7" type="stmt"/>
+      <line num="117" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="118" count="2" type="stmt"/>
+      <line num="121" count="5" type="stmt"/>
+      <line num="123" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="124" count="1" type="stmt"/>
+      <line num="128" count="4" type="stmt"/>
+      <line num="129" count="4" type="stmt"/>
+      <line num="131" count="4" type="stmt"/>
+      <line num="148" count="1" type="stmt"/>
+      <line num="149" count="2" type="stmt"/>
+      <line num="150" count="2" type="stmt"/>
+      <line num="163" count="20" type="cond" truecount="2" falsecount="0"/>
+      <line num="164" count="5" type="stmt"/>
+      <line num="167" count="15" type="stmt"/>
+      <line num="171" count="18" type="stmt"/>
+      <line num="175" count="7" type="stmt"/>
+      <line num="177" count="13" type="cond" truecount="2" falsecount="0"/>
+      <line num="183" count="44" type="stmt"/>
+    </file>
+  </project>
+</coverage>

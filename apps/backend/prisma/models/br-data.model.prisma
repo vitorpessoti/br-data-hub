@@ -1,0 +1,24 @@
+// Modelos Prisma do módulo de domínio `br-data` (modules/br-data).
+// Espelha as entidades que herdam de `Entity<TState>`, incluindo os campos
+// herdados de `EntityState` (id, createdAt, updatedAt, deletedAt).
+// Os dados enriquecidos ficam nas tabelas `ceps` e `cnpjs`; aqui fica o pedido
+// do usuário e o andamento de cada consulta (status, job da fila e erro).
+
+model BrData {
+  id         String    @id
+  userId     String
+  cep        String?
+  cepStatus  String?
+  cepJobId   String?
+  cepError   String?
+  cnpj       String?
+  cnpjStatus String?
+  cnpjJobId  String?
+  cnpjError  String?
+  createdAt  DateTime
+  updatedAt  DateTime
+  deletedAt  DateTime?
+
+  @@index([userId, createdAt])
+  @@map("br_data")
+}

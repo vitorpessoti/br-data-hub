@@ -1,0 +1,15 @@
+// Modelos Prisma do módulo de domínio `auth` (modules/auth).
+// Espelha as entidades que herdam de `Entity<TState>`, incluindo os campos
+// herdados de `EntityState` (id, createdAt, updatedAt, deletedAt).
+
+model User {
+  id        String    @id
+  name      String
+  email     String    @unique
+  password  String
+  createdAt DateTime
+  updatedAt DateTime
+  deletedAt DateTime?
+
+  @@map("users")
+}

@@ -1,0 +1,25 @@
+// Modelos Prisma do módulo de domínio `cep` (modules/cep).
+// Espelha as entidades que herdam de `Entity<TState>`, incluindo os campos
+// herdados de `EntityState` (id, createdAt, updatedAt, deletedAt).
+
+model Cep {
+  id           String    @id
+  cep          String    @unique
+  street       String?
+  complement   String?
+  unit         String?
+  neighborhood String?
+  city         String
+  stateCode    String
+  stateName    String
+  region       String
+  ibgeCode     String
+  giaCode      String?
+  areaCode     String
+  siafiCode    String
+  createdAt    DateTime
+  updatedAt    DateTime
+  deletedAt    DateTime?
+
+  @@map("ceps")
+}

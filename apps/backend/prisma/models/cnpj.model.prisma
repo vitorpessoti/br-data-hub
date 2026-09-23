@@ -1,0 +1,62 @@
+// Modelos Prisma do módulo de domínio `cnpj` (modules/cnpj).
+// Espelha as entidades que herdam de `Entity<TState>`, incluindo os campos
+// herdados de `EntityState` (id, createdAt, updatedAt, deletedAt).
+// As listas da BrasilAPI (cnaes secundários, sócios e regimes tributários)
+// ficam em colunas Json na própria tabela.
+
+model Cnpj {
+  id                                  String    @id
+  cnpj                                String    @unique
+  branchTypeCode                      Int
+  branchTypeDescription               String?
+  legalName                           String
+  tradeName                           String?
+  registrationStatusCode              Int
+  registrationStatusDescription       String?
+  registrationStatusDate              DateTime? @db.Date
+  registrationStatusReasonCode        Int?
+  registrationStatusReasonDescription String?
+  foreignCityName                     String?
+  countryCode                         Int?
+  countryName                         String?
+  legalNatureCode                     Int
+  legalNatureDescription              String?
+  activityStartDate                   DateTime? @db.Date
+  mainCnaeCode                        String
+  mainCnaeDescription                 String?
+  streetType                          String?
+  street                              String?
+  addressNumber                       String?
+  complement                          String?
+  neighborhood                        String?
+  zipCode                             String?
+  stateCode                           String
+  city                                String
+  siafiCode                           String?
+  ibgeCode                            String?
+  primaryPhone                        String?
+  secondaryPhone                      String?
+  fax                                 String?
+  email                               String?
+  responsibleQualificationCode        Int?
+  shareCapital                        Decimal   @db.Decimal(18, 2)
+  companySizeCode                     Int?
+  companySizeDescription              String?
+  simplesOption                       Boolean?
+  simplesOptionDate                   DateTime? @db.Date
+  simplesExclusionDate                DateTime? @db.Date
+  meiOption                           Boolean?
+  meiOptionDate                       DateTime? @db.Date
+  meiExclusionDate                    DateTime? @db.Date
+  specialStatus                       String?
+  specialStatusDate                   DateTime? @db.Date
+  responsibleFederativeEntity         String?
+  secondaryCnaes                      Json
+  partners                            Json
+  taxRegimes                          Json
+  createdAt                           DateTime
+  updatedAt                           DateTime
+  deletedAt                           DateTime?
+
+  @@map("cnpjs")
+}
