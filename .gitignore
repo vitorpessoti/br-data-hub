@@ -1,0 +1,18 @@
+# dependências
+node_modules/
+
+# secrets
+.env
+.env*.local
+
+# Claude Code — config pessoal
+.claude/settings.local.json
+
+# editor
+.vscode/
+
+# SO
+.DS_Store
+Thumbs.db
+
+template/
